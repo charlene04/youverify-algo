@@ -1,23 +1,25 @@
 #4 check if a string a permutated palindrome
 def isPalindromePermutation(string):
-    number = 256
-    count = [0] * number
+    count = {}
 
-    for i in range(0, len(string)):
-	    count[ord(string[i])] = count[ord(string[i])] + 1
+    for i in range(len(string)):
+        if string[i] in count:
+	        count[string[i]] = count[string[i]] + 1
+        else:
+            count[string[i]] = 1
 
 	# Count odd occurring characters
     odd = 0
-    for i in range(0, number):
-	    if (count[i] % 2 != 0):
+    for i in count.values():
+	    if (i % 2 != 0):
 		    odd = odd + 1
 
-	    if (odd > 1):
-		    return False
+    if (odd > 1):
+	    return False
 
     return True
 print(isPalindromePermutation("tactcoa"))
 
 
-# Create a list of placeholders 
-# Loop through the length of the string, then according to ASCII number for the particular letter, increase the count in the list. Even counts would mean that the letter can exist in both extreme. Odd counts will mean that the letter would be location biased. At most, one odd count is allowed in a palindrome. And the respective letter would be located in the middle. If odd counts are more than 1, then it is no more a palindrome.
+# Create a dictionary to keep count
+# Loop through the length of the string, take each character and record the count. Even counts would mean that the letter can exist in both extreme. Odd counts will mean that the letter would be location biased. At most, one odd count is allowed in a palindrome. And the respective letter would be located in the middle. If odd counts are more than 1, then it is no more a palindrome.
