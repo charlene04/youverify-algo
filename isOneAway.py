@@ -11,3 +11,6 @@ def isOneAway(str1, str2):
         return False
     
 print(isOneAway('pale','bale'))
+
+
+# Remove all the letters in string 2 from string 1. If length of string one is less than or equal to 1, that means that only a single change had occured.

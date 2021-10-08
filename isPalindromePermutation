@@ -17,3 +17,7 @@ def isPalindromePermutation(string):
 
     return True
 print(isPalindromePermutation("tactcoa"))
+
+
+# Create a list of placeholders 
+# Loop through the length of the string, then according to ASCII number for the particular letter, increase the count in the list. Even counts would mean that the letter can exist in both extreme. Odd counts will mean that the letter would be location biased. At most, one odd count is allowed in a palindrome. And the respective letter would be located in the middle. If odd counts are more than 1, then it is no more a palindrome.

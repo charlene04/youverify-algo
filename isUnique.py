@@ -8,3 +8,6 @@ def isUnique(string):
     return True      
         
 print(isUnique("apple"))
+
+
+# Get one letter, and loop through the remaining (to the right end) to see if there is any match. Do this for every letter.

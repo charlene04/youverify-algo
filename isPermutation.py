@@ -13,3 +13,9 @@ def isPermutation(str1, str2):
     else:
         return False
 print(isPermutation("magnet", "tnemga")) 
+
+
+# Confirm that the length of the strings are equal first.
+# Loop through both strings, where any character in string 1 matches a character in string 2, delete the character in string 2 and break the loop incase there are other matching characters too. 
+
+# After the operation, if no character remains in string 2

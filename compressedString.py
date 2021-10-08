@@ -28,3 +28,8 @@ def compressedString(string):
         return summ
 
 print(compressedString("aabbaaacccbbbbcc"))
+
+
+# Have a dictionary with the first letter and initial count 1 of the given string. Now loop through the remaining characters in the given string. If the current character is same as the immediate previous character, add the count. If it is not, append the current dictionary to a final list, and then create a new dictionary with the new character and an initial count of 1. Do this till the end of the list, then add the last character to the final list.list
+
+# Now loop through the lists of dictionary and then concatenate the key and value pairs. If the resulting string lenght is greater than or equal to the initail string lenght, return the original string, if not, return the compressed string.
