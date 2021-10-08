@@ -1,0 +1,19 @@
+#4 check if a string a permutated palindrome
+def isPalindromePermutation(string):
+    number = 256
+    count = [0] * number
+
+    for i in range(0, len(string)):
+	    count[ord(string[i])] = count[ord(string[i])] + 1
+
+	# Count odd occurring characters
+    odd = 0
+    for i in range(0, number):
+	    if (count[i] % 2 != 0):
+		    odd = odd + 1
+
+	    if (odd > 1):
+		    return False
+
+    return True
+print(isPalindromePermutation("tactcoa"))
