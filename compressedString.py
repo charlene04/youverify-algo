@@ -1,12 +1,21 @@
 
 #6 return compressed string   
 def compressedString(string):
-    if isUnique(string): #calling the isUnique function to check if content is unique
+    
+    #helper function
+    def isUnique():
+        length = len(string)
+        for i in range(length):
+            for x in range(i+1, length):
+                if string[i] == string[x]:
+                    return False
+        return True      
+     
+    if isUnique(): #calling the isUnique function to check if content is unique
         return string
+    
     result = {string[0]:1}
     final_result = []
-    
-    
     for i in range(1, len(string)):
         if string[i] in result and string[i] == string[i-1]:
                 result[string[i]] = result[string[i]] + 1
@@ -27,7 +36,7 @@ def compressedString(string):
     else:
         return summ
 
-print(compressedString("aabbaaacccbbbbcc"))
+print(compressedString("aaaabcaaaaacdddddd"))
 
 
 # Have a dictionary with the first letter and initial count 1 of the given string. Now loop through the remaining characters in the given string. If the current character is same as the immediate previous character, add the count. If it is not, append the current dictionary to a final list, and then create a new dictionary with the new character and an initial count of 1. Do this till the end of the list, then add the last character to the final list.list
